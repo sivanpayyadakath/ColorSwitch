@@ -13,9 +13,9 @@ class ViewController: UIViewController {
     //MArk outlets
     
     @IBOutlet weak var colorView: UIView!
-    @IBOutlet weak var redControl: UISwitch!
-    @IBOutlet weak var greenContol: UISwitch!
-    @IBOutlet weak var blueControl: UISwitch!
+    @IBOutlet weak var redControl: UISlider!
+    @IBOutlet weak var greenContol: UISlider!
+    @IBOutlet weak var blueControl: UISlider!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,11 +32,11 @@ class ViewController: UIViewController {
             return
         }
         
-        let r: CGFloat = self.redControl.isOn ? 1 : 0
-        let g: CGFloat = self.greenContol.isOn ? 1 : 0
-        let b: CGFloat = self.blueControl.isOn ? 1 : 0
+        let r: Float = self.redControl.value
+        let g: Float = self.greenContol.value
+        let b: Float = self.blueControl.value
         
-        colorView.backgroundColor = UIColor(red: r, green: g, blue: b, alpha: 1)
+        colorView.backgroundColor = UIColor(red: CGFloat(r), green: CGFloat(g), blue: CGFloat(b), alpha: 1)
         
     }
 
